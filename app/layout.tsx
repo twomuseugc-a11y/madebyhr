@@ -1,15 +1,15 @@
-import "./globals.css";
-import Navbar from "./components/Navbar";
+import type { ReactNode } from "react";
 import { CartProvider } from "./context/CartContext";
 
-export default function RootLayout({ children }) {
+type Props = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <Navbar />
-          {children}
-        </CartProvider>
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );
